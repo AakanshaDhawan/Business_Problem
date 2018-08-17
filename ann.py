@@ -60,3 +60,10 @@ classifier.add(Dense(output_dim=1,init='uniform',activation='sigmoid'))
 classifier.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accuracy'])
 #fitting the ann-making connection between input and ann
 classifier.fit(X_train,y_train,batch_size=10,nb_epoch=100)
+
+#making the evaluating model and prediction
+y_pred=classifier.predict(X_test)#returns probability 
+y_pred1=(y_pred>0.5)#returns 0 or 1
+#confusion matrix
+from sklearn.metrics import confusion_matrix
+cm=confusion_matrix(y_test,y_pred1)
