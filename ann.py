@@ -67,3 +67,5 @@ y_pred1=(y_pred>0.5)#returns 0 or 1
 #confusion matrix
 from sklearn.metrics import confusion_matrix
 cm=confusion_matrix(y_test,y_pred1)
+
+#single query in ann
